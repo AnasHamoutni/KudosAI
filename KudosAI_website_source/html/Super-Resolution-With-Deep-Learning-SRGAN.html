@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kudos AI | Blog | Super resolution with Deep Learning : SRGAN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css"/>
+    
+
+    <link rel="icon" type="image/x-icon" href="../img/Kudos_AI_favicon.png">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
+      <a class="navbar-brand" href="index.html"><img width=180px src="../img/Kudos_AI_logo_transparent.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler10" aria-controls="myNavbarToggler10" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="myNavbarToggler10">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About-me.html">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Get-in-Touch.html">Get in Touch</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav sm-icons mr-0 d-flex justify-content-center">
+              <li class="nav-item"><a class="nav-link" target=”_blank” href="https://www.linkedin.com/in/hamoutni/"><i class="fa-brands fa-linkedin-in" style="margin-top: 7px;"></i></a></li>
+              <li class="nav-item"><a class="nav-link" target=”_blank”  href="https://www.kaggle.com/anashamoutni"><i class="fab fa-kaggle"></i></a></li>
+              <li class="nav-item"><a class="nav-link" target=”_blank” href="https://github.com/AnasHamoutni"><i class="fab fa-github" style="margin-top: 7px;"></i></a></li>
+              <li class="nav-item"><a class="nav-link" target=”_blank”  href="https://twitter.com/anashamoutni"><i class="fab fa-twitter" style="margin-top: 7px;"></i></a></li>
+          </ul>
+        </div>
+    </nav>
+
+<div class="blogPost-div">
+
+<img class="imgPost" loading="lazy" src="../img/super-resolution.jpg" alt="Super resolution Image" />
+<div class="blogPost-title-div"><h2 class="blogPost-title">Super resolution with Deep Learning: SRGAN</h2></div>
+<div class="postBody-div"><p><span style="color:blue">The Super Resolution GAN</span> (<span style="color:red">SRGAN</span>) is a <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank">deep learning</a> algorithm whose objective is to improve the quality of an image. It belongs to the family of <span style="color:red">GAN</span>s (<a href="https://en.wikipedia.org/wiki/Generative_adversarial_network" target="_blank">Generative Adversarial Networks</a>).</br></br> In this article, we will first discuss the different existing <span style="color:red">deep learning</span> algorithms for <a href="https://en.wikipedia.org/wiki/Digital_image_processing" target="_blank">image processing</a> and we will then see more precisely what a <span style="color:red">GAN</span> is. Finally, we will discuss the specificity of <span style="color:red">SRGAN</span>.</br></br>
+To analyze images, we often use a <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network" target="_blank">Convolutional Neural Network</a> (<span style="color:red">CNN</span>). It is a <span style="color:red">deep learning</span> algorithm that allows <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)#Convolution" target="_blank">convolutions</a> to extract features from an image.</br></br> This type of algorithm is used for image classification or image recognition. However, it does not allow to generate or modify an image, and for that we should use <span style="color:red">GAN</span>s.</p>
+
+<center><hr align="center" width="50%" class="solid"></center><h4 style="text-align:center; color:blue; margin-bottom:30px; margin-top:35px;">- Functioning, applications and variants of GANs -</h4><center><hr align="center" width="50%" class="solid"></center>
+<p>A <span style="color:red">GAN</span> is an algorithm that transforms or generates images.</br></br> If we refer to its definition, a <span style="color:red">GAN</span> is composed of two <a href="https://en.wikipedia.org/wiki/Artificial_neural_network" target="_blank">neural networks</a> competing against each other. They are adversaries. However, we could rather say that the second network is the trainer of the first one, let's see why.</br></br> The two networks that make up a <span style="color:red">GAN</span> are the <span style="text-decoration:underline; color:red;">generator</span> and the <span style="text-decoration:underline; color:red;">discriminator</span>:</br></br> The <span style="color:red;">generator</span> will take as input an image (or a random vector) and will provide as output the transformed image (or the generated image).</br></br> The role of the <span style="color:red;">discriminator</span> will be to judge the quality of that transformation (or generation). For that, the <span style="color:red;">discriminator</span> will have, at its disposal, images coming from the <span style="color:red;">generator</span> as well as real images. He will then have to determine if the generated images are real or fake (artificial).</br></br> As you will have understood it, the <span style="color:red;">discriminator</span> is nothing else than a binary classification algorithm applied to images, it is a <span style="color:red;">CNN</span> (<span style="color:blue;">Convolutional Neural Network</span>).</br></br> During the first iteration, it will be very easy for the <span style="color:red;">discriminator</span> to determine the nature of the images provided (real or artificial).</br></br> The objective of the <span style="color:red;">generator</span> is to improve during the training to make the task of the <span style="color:red;">discriminator</span> more and more difficult.</br></br> There is still an element to be specified. How does the <span style="color:red;">generator</span> improve with each iteration?</br></br> The <span style="color:red;">discriminator</span> has a double role. It must not only determine the nature of the images but also communicate to the <span style="color:red;">generator</span> how it has succeeded in its mission, so that the <span style="color:red;">generator</span> can improve. It is for that reason that we can consider that the <span style="color:red;">discriminator</span> is not the opponent of the <span style="color:red;">generator</span> but rather its trainer.</br></br> The following is a diagram summarizing the functioning of a <span style="color:red;">GAN</span>:
+</p>
+<img class="imgPost" loading="lazy" style="width:85%; margin-bottom:20px;"src="../img/GAN.jpg">
+<p>There are many variations of <span style="color:red;">GAN</span>s, but the idea behind each one of them is the same as the one presented above.</br></br> Each variant addresses a specific use case.</br></br> We can start by mentioning <span style="color:red;">SRGAN</span>, the algorithm that we will see in more detail below.</br></br> We can also mention the <a href="https://en.wikipedia.org/wiki/StyleGAN" target="_blank">styleGAN</a> algorithm, which was developed by <a href="https://www.nvidia.com/en-us/" target="_blank">NVIDIA</a> in <span style="color:red;">2018</span> and is available as open-source since <span style="color:red;">2019</span>. This algorithm generates very realistic human faces.</br></br> Compared to a classic <span style="color:red;">GAN</span>, the <span style="color:red;">generator</span> is much more complex.</br></br> Here is the type of results we can get:
+</p>
+
+<figure>
+    <img class="imgPost" loading="lazy" style="width:80%; margin-bottom:20px;"src="../img/stylegan.jpg">
+    <figcaption style="text-align:center;margin-top:0;">source: <a href="https://bit.ly/3yGBLhI" target="_blank">arxiv.org/pdf/1812.04948.pdf</a></figcaption>
+</figure>
+<center><hr align="center" width="50%" class="solid"></center><h4 style="text-align:center; color:blue; margin-bottom:30px; margin-top:35px;">- SRGAN: How the algorithm works -</h4><center><hr align="center" width="50%" class="solid"></center>
+<p>Let's turn to <span style="color:red;">SRGAN</span>, which is a variant of <span style="color:red;">GAN</span>s.</br></br> Instead of using two <span style="color:red;">neural networks</span>, it uses three. This algorithm is specifically designed to do image super-resolution (or <span style="color:red;">image depixelation</span>).</br></br> We start with the <span style="color:red;">generator</span>, the <span style="color:red;">discriminator</span>, and we add a third network: the <a href="https://medium.com/mlearning-ai/image-detection-using-convolutional-neural-networks-89c9e21fffa3" target="_blank">VGG19</a> network.</br></br> The latter is a <span style="color:red;">CNN</span> that won a <span style="color:blue;">deep learning</span> competition aimed at classifying images from the <a href="https://www.image-net.org/" target="_blank">ImageNet</a> database (several million images). That network is already trained and is very (very) efficient.</br></br> We are going to use that network to make sure that the image coming from the <span style="color:red;">generator</span> conforms to the image we want to obtain. This is an additional way of ensuring the quality of the generation (in addition to the <span style="color:red;">discriminator</span>).</br></br> Now, to start the implementation, we will need a database of low resolution images and their corresponding high resolution ones. We will provide the <span style="color:red;">generator</span> with the low resolution images and it will produce, in output, images of higher resolution.</br></br> We will then give the <span style="color:red;">discriminator</span> the real images and the generated ones so that it can train to differentiate them. We will also provide them to the <span style="color:blue;">VGG19</span> network. The network will return the feature maps of the real and generated images.</br></br> A feature map is a 2D matrix of neurons located after the <span style="color:red;">activation layer</span> of a filter. It is what a <span style="color:red;">neural network</span> learns from an image.</br></br> We will compare these feature maps to get an idea of the quality of the generation. It makes more sense to do a comparison between the feature maps than to apply the <a href="https://en.wikipedia.org/wiki/Mean_squared_error" target="_blank">MSE</a> (<span style="color:red;">mean squared error</span>) between the two sets of images directly.</br></br> The original <span style="color:red;">SRGAN</span> paper comes back on this point: <a href="https://bit.ly/3D0RNFI" target="_blank" style="text-decoration:underline">[1609.04802] Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network</a>.</br></br>This explains the good performance of an <span style="color:red;">SRGAN</span> compared to a regular image depixing <span style="color:red;">GAN</span>.</br></br>
+<span style="text-decoration:underline">Let's explain further more through a concrete example:</span></br></br> Let's say that we have images of size (<span style="color:red;">64*64</span>) that we want to transform into size (<span style="color:red;">256*256</span>).</br></br> During the training phase, we have the same images in both (<span style="color:red;">256*256</span>) and (<span style="color:red;">64*64</span>) versions. We provide the images of size (<span style="color:red;">64*64</span>), as input, to the <span style="color:red;">generator</span> and we get the output. After that, we send the real images and the generated ones (<span style="color:red;">256*256</span>) to the <span style="color:red;">discriminator</span> and the <span style="color:blue;">VGG</span>.</br></br> We reiterate that process to improve the performance of the <span style="color:red;">generator</span>.</br></br> Finally, we test our algorithm by providing the <span style="color:red;">generator</span> with new images of size (<span style="color:red;">64*64</span>). If it is correctly trained, it will provide a better quality image.</p>
+</br>
+</div>
+<!--<hr align="center" width="80%" class="solid"><hr align="center" width="80%" class="solid">
+<div></br></div>
+
+
+<div style="width:80%;margin-left:auto;margin-right:auto;">
+<p style="font-family:myFirstFont;font-size:22px;">Leave a comment!</p></div>
+<div class="container" style="margin-left:auto;margin-right:auto;width:80%">
+  <form action="action_page.php">
+
+    <label style="font-family:myFirstFont;" for="fname" >Name</label>
+    <input type="text" id="fname" name="name" placeholder="Your name..">
+ 
+    <label style="font-family:myFirstFont;" for="semail">Email</label>
+    <input type="email" id="subject" name="email" placeholder="Your email..">
+
+    <label style="font-family:myFirstFont;" for="subject">Comment</label>
+    <textarea id="subject" name="message" placeholder="Write something.." style="height:120px"></textarea>
+
+    <input type="submit" style="background-color:rgba(0,0,255,0.7);font-family:myFirstFont;" value="Post">
+
+  </form>
+
+</div>
+
+<div class="commentsNumber"><h4>1 Comment</h4></div>
+
+<div class="media">
+                    <img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                    <div class="media-body">
+                        <h4 class="media-heading">Elon Musk</h4>
+			<h6><a href="mailto:hamoutnianas@gmail.com" target="_blank">hamoutnianas@gmail.com</a></h6>
+                        <p>Great Article!</p>
+                        <ul class="list-unstyled list-inline media-detail pull-left">
+                            <li style="display:inline;margin-right:5px;"><i class="fa fa-calendar"></i> 23/10/2022</li>
+                        </ul>
+                    </div>
+                </div>
+              -->
+<footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+	
+    </div>
+    <div class="footer-elem-container">
+
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/hamoutni/" target="_blank">
+          <ion-icon name="logo-linkedIn"></ion-icon>
+        </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.kaggle.com/AnasHamoutni" target="_blank">
+          <i class="fab fa-kaggle foote"></i>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/AnasHamoutni" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/AnasHamoutni" target="_blank">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="Projects.html">Projects</a></li>
+      <li class="menu__item"><a class="menu__link" href="About-me.html">About me</a></li>
+      <li class="menu__item"><a class="menu__link" href="Blog.html">Blog</a></li>
+      <li class="menu__item"><a class="menu__link" href="Get-in-Touch.html">Get in Touch</a></li>
+
+    </ul>
+    
+<div class="p-foot-div">
+    <p>&copy;2022 Kudos AI | by Anas HAMOUTNI | All Rights Reserved</p>
+</div>
+    </div>
+  </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src='https://kit.fontawesome.com/d25a67fa19.js' crossorigin='anonymous' defer></script>
+    <script src="../js/index.js" defer></script>
+</body>
+</html>

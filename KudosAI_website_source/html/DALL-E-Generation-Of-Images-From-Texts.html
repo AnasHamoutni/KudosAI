@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kudos AI | Blog | DALL-E : Generation of Images from Texts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css"/>
+
+    <link rel="icon" type="image/x-icon" href="../img/Kudos_AI_favicon.png">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
+      <a class="navbar-brand" href="index.html"><img width=180px src="../img/Kudos_AI_logo_transparent.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler10" aria-controls="myNavbarToggler10" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="myNavbarToggler10">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About-me.html">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Get-in-Touch.html">Get in Touch</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav sm-icons mr-0 d-flex justify-content-center">
+              <li class="nav-item"><a class="nav-link" target=”_blank” href="https://www.linkedin.com/in/hamoutni/"><i class="fa-brands fa-linkedin-in" style="margin-top: 7px;"></i></a></li>
+              <li class="nav-item"><a class="nav-link" target=”_blank”  href="https://www.kaggle.com/anashamoutni"><i class="fab fa-kaggle"></i></a></li>
+              <li class="nav-item"><a class="nav-link" target=”_blank” href="https://github.com/AnasHamoutni"><i class="fab fa-github" style="margin-top: 7px;"></i></a></li>
+              <li class="nav-item"><a class="nav-link" target=”_blank”  href="https://twitter.com/anashamoutni"><i class="fab fa-twitter" style="margin-top: 7px;"></i></a></li>
+          </ul>
+        </div>
+    </nav>
+
+<div class="blogPost-div">
+
+<img class="imgPost" loading="lazy" src="../img/Text-to-image-generation.jpg" alt="Text to Image generation" />
+<div class="blogPost-title-div"><h2 class="blogPost-title">DALL-E : Generating Images from Text</h2></div>
+<div class="postBody-div"><p><span style="color:blue">DALL-E</span> is an <a href="https://en.wikipedia.org/wiki/OpenAI" target="_blank">OpenAI</a> <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank">deep learning</a> model that is able to create images from simple text. The first version was presented in <span style="color:red">2021</span>, and just a few weeks ago, <a href="https://en.wikipedia.org/wiki/OpenAI" target="_blank">OpenAI</a> presented <span style="color:blue">DALL-E</span> <span style="color:red">v2</span>, an improved and even more bluffing (or scary?) version.</br></br>
+
+In this article, I will explain to you how image generation works and will show some great examples too.</p>
+
+<center><hr align="center" width="50%" class="solid"></center><h4 style="text-align:center; color:blue; margin-bottom:30px; margin-top:35px;">- Presentation of the DALL-E model through examples -</h4><center><hr align="center" width="50%" class="solid"></center>
+<p>The <span style="color:blue">DALL-E</span> model is a variant of <a href="https://en.wikipedia.org/wiki/GPT-3" target="_blank">GPT-3</a> that has <span style="color:red">12 billion parameters</span>, and which was trained using a dataset of over <span style="color:red">250 million</span> image/text pairs (so don't try to train the same model at home <span>&#128514;</span>).</br></br>
+
+With this project, <a href="https://en.wikipedia.org/wiki/OpenAI" target="_blank">OpenAI</a> shows again that it has become the worldwide reference in language processing. This achievement was made possible thanks to <a href="https://en.wikipedia.org/wiki/GPT-3" target="_blank">GPT-3</a> and its ability to understand sentences with great accuracy.</br></br>
+
+And it's good to know that <span style="color:blue">DALL-E</span> <span style="color:red">v1</span> was already impressive, here is some of his art:
+</p>
+<img class="imgPost" loading="lazy" style="width:85%; border:0; margin-top:30px; margin-bottom:20px;"src="../img/Avocado armchair.jpg">
+<img class="imgPost" loading="lazy" style="width:85%; border:0; margin-bottom:30px; margin-top:30px;"src="../img/Image and text prompt.jpg">
+<p>You can find more examples from the <span style="color:red">v2</span> on <a href="https://www.instagram.com/openaidalle/" target="_blank">DALL-E's instagram account</a>.</p>
+
+<center><hr align="center" width="50%" class="solid"></center><h4 style="text-align:center; color:blue; margin-bottom:30px; margin-top:35px;">- How to test DALL-E? -</h4><center><hr align="center" width="50%" class="solid"></center>
+<p><a href="https://en.wikipedia.org/wiki/OpenAI" target="_blank">OpenAI</a> offers only limited access to the general public (<span style="color:red">50 images per free account</span>).</br></br>
+
+In the meantime, <a href="https://en.wikipedia.org/wiki/Hugging_Face" target="_blank">HuggingFace</a> has proposed a <a href="https://huggingface.co/spaces/dalle-mini/dalle-mini" target="_blank">DALL-E mini</a> version that allows you to do the same thing, with less quality, but it's still bluffing!
+</p>
+<img class="imgPost" loading="lazy" style="width:90%; margin-bottom:20px;"src="../img/Dalle-mini.jpg">
+<center><hr align="center" width="50%" class="solid"></center><h4 style="text-align:center; color:blue; margin-bottom:30px; margin-top:35px;">- What are the main applications of this technology? -</h4><center><hr align="center" width="50%" class="solid"></center>
+<p>The potential applications of this project are infinite, they go from artistic content creation, to e-commerce design.</p>
+
+<h4 style="color:red;margin-top:20px;margin-bottom:20px;">+ Generate images for articles</h4>
+
+<p>If you're a blogger, you can ask <span style="color:blue">DALL-E</span> for free copyright images.</br></br>
+
+This application could raise a lot of ethical questions, especially in relation to fake news. I'll address that issue in the last part of this article.
+</p>
+<h4 style="color:red;margin-top:20px;margin-bottom:20px;">+ Finding ideas for Fashion and Design</h4>
+
+<p><span style="color:blue">DALL-E</span> is very good at mixing concepts, like the example of "<span style="color:red">the avocado and the chair</span>" from part 1.</br></br> That creativity could be reused by designers to create new pieces of art.
+
+Here's what it could look like:</p>
+<img class="imgPost" loading="lazy" style="width:90%; margin-top:30px; margin-bottom:10px;" src="../img/jacket.jpg">
+<img class="imgPost" loading="lazy" style="width:90%; margin-bottom:30px; margin-top:0px;" src="../img/t-shirt.jpg">
+<h4 style="color:red;margin-top:20px;margin-bottom:20px;">+ DALL-E v2 for e-commerce</h4>
+
+<p><span style="color:blue">DALL-E</span> <span style="color:red">v2</span> is capable of quickly modifying an image. So in fashion for example, we could generate a photo of a model and make her wear different pieces of clothes in no time.</br></p>
+<h4 style="color:red;margin-top:20px;margin-bottom:20px;">+ Checking the robustness of an NLP model</h4>
+<p>Moreover, an interesting application of <span style="color:blue">DALL-E</span> is that it can be used to check whether or not a <a href="https://en.wikipedia.org/wiki/Natural_language_processing" target="_blank">Natural Language Processing</a> model understands the sentences it is given. And this is brilliant as it would avoid big confusions.</br></br> In the medical field, for example, we could test the understanding level of a translation model by making it generate images.</p>
+<center><hr align="center" width="50%" class="solid"></center><h4 style="text-align:center; color:blue; margin-bottom:30px; margin-top:35px;">- DALL-E limitations and ethics -</h4><center><hr align="center" width="50%" class="solid"></center>
+<p><span style="color:blue">DALL-E</span> is strong! <span style="color:red">Very strong!</span> And with great power comes great responsibility.</br></br>
+
+As I mentioned earlier, the main threat of this technology is the possibility of feeding <span style="color:red">fake news</span> by ill-intentioned people.</br></br>
+
+On the other hand, these models could put a lot of people out of work. I often say that the main danger of <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">AI</a>s is not the fact that they will replace humans, but in this case, I think the concern is real. For example, <span style="color:red">the business model of photographers/artists will have to be rethought</span>.</br></br>
+
+These ethical limits have pushed <a href="https://en.wikipedia.org/wiki/OpenAI" target="_blank">OpenAI</a> to limit access to <span style="color:blue">DALL-E</span>. Moreover, they have also set up a moderation system for the use of the model, to avoid the generation of pornographic, religious or political content.</br></br>
+
+Finally, you should know that the robustness of these models <span style="color:red">depends heavily on the size of the training dataset and the number of parameters of the neural network</span>. This raises issues for the environment on the one hand, and on the other hand highlights the total control and monopoly exerted by companies, or organizations, like <a href="https://en.wikipedia.org/wiki/Google" target="_blank">Google</a> and <a href="https://en.wikipedia.org/wiki/OpenAI" target="_blank">OpenAI</a>.</br></br>
+
+No small company would ever have been able to design such a robust model, nobody outside a handful of players has the means to do so.</p>
+</div>
+<!--<hr align="center" width="80%" class="solid"><hr align="center" width="80%" class="solid">
+<div></br></div>
+
+
+<div style="width:80%;margin-left:auto;margin-right:auto;">
+<p style="font-family:myFirstFont;font-size:22px;">Leave a comment!</p></div>
+<div class="container" style="margin-left:auto;margin-right:auto;width:80%">
+  <form action="action_page.php">
+
+    <label style="font-family:myFirstFont;" for="fname" >Name</label>
+    <input type="text" id="fname" name="name" placeholder="Your name..">
+ 
+    <label style="font-family:myFirstFont;" for="semail">Email</label>
+    <input type="email" id="subject" name="email" placeholder="Your email..">
+
+    <label style="font-family:myFirstFont;" for="subject">Comment</label>
+    <textarea id="subject" name="message" placeholder="Write something.." style="height:120px"></textarea>
+
+    <input type="submit" style="background-color:rgba(0,0,255,0.7);font-family:myFirstFont;" value="Post">
+
+  </form>
+
+
+</div>
+
+<div class="commentsNumber"><h4>1 Comment</h4></div>
+
+<div class="media">
+                    <img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                    <div class="media-body">
+                        <h4 class="media-heading">Elon Musk</h4>
+			<h6><a href="mailto:hamoutnianas@gmail.com" target="_blank">hamoutnianas@gmail.com</a></h6>
+                        <p>Great Article!</p>
+                        <ul class="list-unstyled list-inline media-detail pull-left">
+                            <li style="display:inline;margin-right:5px;"><i class="fa fa-calendar"></i> 23/10/2022</li>
+
+                        </ul>
+                    </div>
+                </div>
+              -->
+<footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+	
+    </div>
+    <div class="footer-elem-container">
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/hamoutni/" target="_blank">
+          <ion-icon name="logo-linkedIn"></ion-icon>
+        </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.kaggle.com/AnasHamoutni" target="_blank">
+          <i class="fab fa-kaggle foote"></i>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/AnasHamoutni" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/AnasHamoutni" target="_blank">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="Projects.html">Projects</a></li>
+      <li class="menu__item"><a class="menu__link" href="About-me.html">About me</a></li>
+      <li class="menu__item"><a class="menu__link" href="Blog.html">Blog</a></li>
+      <li class="menu__item"><a class="menu__link" href="Get-in-Touch.html">Get in Touch</a></li>
+
+    </ul>
+<div class="p-foot-div">
+    <p>&copy;2022 Kudos AI | by Anas HAMOUTNI | All Rights Reserved</p>
+</div>
+</div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src='https://kit.fontawesome.com/d25a67fa19.js' crossorigin='anonymous' defer></script>
+    <script src="../js/index.js" defer></script>
+</body>
+</html>
